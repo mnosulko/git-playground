@@ -7,6 +7,11 @@ def double_check(guess):
         return False
     return True
 
+def user_lost():
+    print("=============================")
+    print(f"= You have lost")
+    print("=============================")
+
 
 def congratulate_user():
     print("=============================")
@@ -65,3 +70,4 @@ while not is_game_over():
     else:
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+    user_lost()
