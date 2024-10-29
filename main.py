@@ -1,9 +1,17 @@
 import words_fetcher
 import random
 
+def double_check(guess):
+    if guess in guesses:
+        print("You have already choose this word")
+        return False
+    return True
+
 
 def congratulate_user():
-    print(f"Congratulations, you won! your words: {guesses}")
+    print("=============================")
+    print(f"= Congratulations! You won! your words: {guesses}")
+    print("=============================")
 
 
 def is_game_over():
@@ -42,6 +50,9 @@ while not is_game_over():
     guess = input("Your next take: ")
 
     if not guess_is_valid(guess):
+        continue
+
+    if not double_check(guess):
         continue
 
     if guess in full_list:
